@@ -39,6 +39,8 @@
 	<bean id = "userDao" class = "com.libman.dao.UserDaoImpl"></bean>
 	<bean id = "lendRequestDao" class = "com.libman.dao.LendRequestDaoImpl"></bean>
 	<bean id = "booksDao" class = "com.libman.dao.BooksDaoImpl"></bean>
+	<bean id = "authorsDao" class = "com.libman.dao.AuthorDaoImpl"></bean>
+	<bean id = "publisherDao" class = "com.libman.dao.PublisherDaoImpl"></bean>
 	<bean id = "userService" class = "com.libman.services.UserServiceImpl"></bean>
 		
 	

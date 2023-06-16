@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +16,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/svg-with-js.min.css" integrity="sha512-iyaXtrpKz7FIRsICgrvVtq1vkSJT/cfLeXA0sHSQaAs0y3LdqXWlQCXTxM246mTQ/M2qpyVX3A0aRfmTt0LOCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/v4-font-face.min.css" integrity="sha512-ueEJBIkl0DBM2fA8eS/o12U3l+ZUFn32IUY4jIaTZnNtKR4ktQw3cE/tx/tFIYJuBm4EVT7WUMqIXP1TUN0boA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/v4-shims.min.css" integrity="sha512-SkKgNHAdwXn0lw1CzCwHFpNidxo0GTBZkWWuUHNahSjQZtmeoQYjMvmHe1WYuCT8HystwoBp8fYDfuWD6azryQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="icon" type="image/x-icon" href="images/others/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/LibraryManagement/resources/images/others/favicon.ico">
   <style>
 body {
   font-family: sans-serif;
@@ -210,6 +214,26 @@ input[type=text]:focus-visible {
     transition: 0.5s;
     box-sizing: border-box;
 }
+
+input[type=password] {
+    border: 2px solid #009999;  
+    border-radius: 5px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    box-sizing: border-box;
+}
+input[type=password]:focus {
+    border: 3px solid #009999;  
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    box-sizing: border-box;
+}
+input[type=password]:focus-visible {
+    border: 3px solid #009999;  
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    box-sizing: border-box;
+}
 </style>
 <title>E-Library | Add Users</title>
 </head>
@@ -217,7 +241,7 @@ input[type=text]:focus-visible {
     <div class="container">
         <div class="logo-container">
         <div class="LogoImg">
-            <a href="index.html"><img src="images/others/books.png"/> </a>
+            <a href="/LibraryManagement/"><img src="/LibraryManagement/resources/images/others/books.png"/> </a>
         </div>
         
     </div>
@@ -226,39 +250,41 @@ input[type=text]:focus-visible {
             <li><a href="#">About</a></li>
             <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a></li>
             <li><i class="fa fa-user" aria-hidden="true"></i> Admin</li>
-            <li><a href="login.html">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+            <li><a href="/LibraryManagement/login">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
         </ul>
     </div>
     <div id="navbar">
-        <a href="booksinventory.html">Book Inventory</a>
-        <a href="authorrecords.html">Authors</a>
-        <a href="publisherrecords.html">Publishers</a>
-        <a class="active" href="userrecords.html">Users</a>
-        <a href="lendrequestlist.html">Request List</a>
-        <a href="lentlist.html">Lent Books</a>
-        <a href="lendhistory.html">Lend/Return History</a>
+        <a href="/LibraryManagement/booksinventory">Book Inventory</a>
+        <a href="/LibraryManagement/authorrecords">Authors</a>
+        <a href="/LibraryManagement/publisherrecords">Publishers</a>
+        <a class="active" href="/LibraryManagement/userrecords">Users</a>
+        <a href="/LibraryManagement/lendrequestlist">Request List</a>
+        <a href="/LibraryManagement/lentlist">Lent Books</a>
+        <a href="/LibraryManagement/lendhistory">Lend/Return History</a>
       </div>
       <div class="content">
-        <a href="userrecords.html">Back to Users List</a>
+        <a href="/LibraryManagement/userrecords">Back to Users List</a>
         <hr/>
         <span class="userfriendly">
             <div style="text-align: center;">
            <h3 style="color: #009999;">Create New User</h3>
         </div>
         <br/>
+         <form:form method="POST" action="saveusers">
            <label>User Name</label>
            <br/>
-           <input type="text" size="50%"/>
+           <form:input type="text" size="50%" path="username"/>
            <br/><br/>
            <label>Password</label>
            <br/>
-           <input type="text" size="50%"/>
+           <form:input type="password" size="50%" path="password"/>
            <br/><br/>
            <label>Role</label>
            <br/>
-           <input type="text" size="50%"/>
+           <form:input type="text" size="50%" path="role"/>
            <br/><br/>
            <button class="addpublisherbutton" style="vertical-align:middle" onclick="showAlert()"><span>Add User</span></button>
+           </form:form>
         </span>
         
     </div>

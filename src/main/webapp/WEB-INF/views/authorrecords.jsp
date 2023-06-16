@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+ <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +16,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/svg-with-js.min.css" integrity="sha512-iyaXtrpKz7FIRsICgrvVtq1vkSJT/cfLeXA0sHSQaAs0y3LdqXWlQCXTxM246mTQ/M2qpyVX3A0aRfmTt0LOCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/v4-font-face.min.css" integrity="sha512-ueEJBIkl0DBM2fA8eS/o12U3l+ZUFn32IUY4jIaTZnNtKR4ktQw3cE/tx/tFIYJuBm4EVT7WUMqIXP1TUN0boA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/v4-shims.min.css" integrity="sha512-SkKgNHAdwXn0lw1CzCwHFpNidxo0GTBZkWWuUHNahSjQZtmeoQYjMvmHe1WYuCT8HystwoBp8fYDfuWD6azryQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="icon" type="image/x-icon" href="images/others/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="resources/images/others/favicon.ico">
   <style>
 body {
   font-family: sans-serif;
@@ -174,7 +178,7 @@ th{
     <div class="container">
         <div class="logo-container">
         <div class="LogoImg">
-            <a href="index.html"><img src="images/others/books.png"/> </a>
+            <a href="/LibraryManagement/"><img src="resources/images/others/books.png"/> </a>
         </div>
         
     </div>
@@ -183,82 +187,38 @@ th{
             <li><a href="#">About</a></li>
             <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a></li>
             <li><i class="fa fa-user" aria-hidden="true"></i> Admin</li>
-            <li><a href="login.html">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+            <li><a href="/LibraryManagement/login">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
         </ul>
     </div>
     <div id="navbar">
-        <a href="booksinventory.html">Book Inventory</a>
-        <a class="active" href="authorrecords.html">Authors</a>
-        <a href="publisherrecords.html">Publishers</a>
-        <a href="userrecords.html">Users</a>
-        <a href="lendrequestlist.html">Request List</a>
-        <a href="lentlist.html">Lent Books</a>
-        <a href="lendhistory.html">Lend/Return History</a>
+        <a href="booksinventory">Book Inventory</a>
+        <a class="active" href="authorrecords">Authors</a>
+        <a href="publisherrecords">Publishers</a>
+        <a href="userrecords">Users</a>
+        <a href="lendrequestlist">Request List</a>
+        <a href="lentlist">Lent Books</a>
+        <a href="lendhistory">Lend/Return History</a>
       </div>
       <div class="content">
-        <a href="addauthors.html">Add Authors</a>
+        <a href="addauthors">Add Authors</a>
         <div class="booklist-table">
             <table class="styled-table">
                 <thead>
                     <tr>
+<th>Authors ID</th>
                         <th>Authors Name</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>JK Rowling</td>
-                        <td><a href="#">Edit</a> <br/> <a href="#">Delete</a></td>
+                  <c:forEach var="authors" items="${authorlist}">
+                  <tr>
+                  <td>${authors.authorid}</td>
+           				<td>${authors.authorname}</td>
+           				<td><a href="editauthors/${authors.authorid}">Edit</a>
+                        <a href="deleteauthors/${authors.authorid}" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
                     </tr>
-                    <tr>
-                        <td>Joseph Murphy</td>
-                        <td><a href="#">Edit</a> <br/> <a href="#">Delete</a></td>
-                    </tr>
-                    <tr>
-                        <td>Dale Carnegie</td>
-                        <td><a href="#">Edit</a> <br/> <a href="#">Delete</a></td>
-                    </tr>
-                    <tr>
-                        <td>Martin Dunkerton</td>
-                        <td><a href="#">Edit</a> <br/> <a href="#">Delete</a></td>
-                    </tr>
-                    <tr>
-                        <td>Mark Manson</td>
-                        <td><a href="#">Edit</a> <br/> <a href="#">Delete</a></td>
-                    </tr>
-                    <tr>
-                        <td>Amit Ghule</td>
-                        <td><a href="#">Edit</a> <br/> <a href="#">Delete</a></td>
-                    </tr>
-                    <tr>
-                        <td>Arthur Conan Doyle</td>
-                        <td><a href="#">Edit</a> <br/> <a href="#">Delete</a></td>
-                    </tr>
-                    <tr>
-                        <td>Alice Walker</td>
-                        <td><a href="#">Edit</a> <br/> <a href="#">Delete</a></td>
-                    </tr>
-                    <tr>
-                        <td>Ralph Ellison</td>
-                        <td><a href="#">Edit</a> <br/> <a href="#">Delete</a></td>
-                    </tr>
-                    <tr>
-                        <td>J. R. R. Tolkien</td>
-                        <td><a href="#">Edit</a> <br/> <a href="#">Delete</a></td>
-                    </tr>
-                    <tr>
-                        <td>Rebecca Serle</td>
-                        <td><a href="#">Edit</a> <br/> <a href="#">Delete</a></td>
-                    </tr>
-                    <tr>
-                        <td>Tana French</td>
-                        <td><a href="#">Edit</a> <br/> <a href="#">Delete</a></td>
-                    </tr>
-                    <tr>
-                        <td>Harper Lee</td>
-                        <td><a href="#">Edit</a> <br/> <a href="#">Delete</a></td>
-                    </tr>
-                  
+                  </c:forEach>
                     <!-- and so on... -->
                 </tbody>
             </table>

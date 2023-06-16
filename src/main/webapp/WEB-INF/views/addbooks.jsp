@@ -221,7 +221,7 @@ input[type=text]:focus-visible {
     <div class="container">
         <div class="logo-container">
         <div class="LogoImg">
-            <a href="index.html"><img src="resources/images/others/books.png"/> </a>
+            <a href="/LibraryManagement/"><img src="/LibraryManagement/resources/images/others/books.png"/> </a>
         </div>
         
     </div>
@@ -230,17 +230,17 @@ input[type=text]:focus-visible {
             <li><a href="#">About</a></li>
             <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a></li>
             <li><i class="fa fa-user" aria-hidden="true"></i> Admin</li>
-            <li><a href="login.html">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+            <li><a href="/LibraryManagement/login">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
         </ul>
     </div>
     <div id="navbar">
-        <a class="active" href="booksinventory">Book Inventory</a>
-        <a href="authorrecords.html">Authors</a>
-        <a href="publisherrecords.html">Publishers</a>
-        <a href="userrecords.html">Users</a>
+        <a class="active" href="/LibraryManagement/booksinventory">Book Inventory</a>
+        <a href="authorrecords">Authors</a>
+        <a href="publisherrecords">Publishers</a>
+        <a href="userrecords">Users</a>
         <a href="lendrequestlist">Request List</a>
         <a href="lentlist.html">Lent Books</a>
-        <a href="lendhistory.html">Lend/Return History</a>
+        <a href="lendhistory">Lend/Return History</a>
       </div>
       <div class="content">
         <a href="booksinventory">Back to Books List</a>
@@ -256,33 +256,29 @@ input[type=text]:focus-visible {
            
            <br/>
            <form:input type="text" size="50%" path="booktitle"/>
-           <select style="margin-left: 75px;width:25%;height: 30px; border: thin solid #009999;  -webkit-transition: 0.5s;
-           transition: 0.5s;">
-          <c:forEach var="books" items="${bookinvlist}">
-            <option>${books.authorid}</option>
+           <form:select style="margin-left: 75px;width:25%;height: 30px; border: thin solid #009999;  -webkit-transition: 0.5s;
+           transition: 0.5s;" path="authorid">
+          <c:forEach var="author" items="${authorlist}">
+            <option>${author.authorid}</option>
             </c:forEach>
-           </select> 
+           </form:select> 
             <br/><br/>
            <label>Number of Copies</label>
            <label style="margin-left: 390px;">Publisher Name</label>
            <br/>
-           <input type="text" size="50%"/>
-           <select style="margin-left: 75px;width:25%;height: 30px;border: thin solid #009999;  -webkit-transition: 0.5s;
-           transition: 0.5s;">
-            <option>Bloomsbury Publishing</option>
-            <option>Simon & Schuster</option>
-            <option>HarperOne</option>
-            <option>Notion Press</option>
-            <option>George Newnes</option>
-            <option>Harcourt Brace Jovanovich</option>
-            <option>Random House</option>
-           </select> 
+           <form:input type="text" size="50%" path="noofcopies"/>
+           <form:select style="margin-left: 75px;width:25%;height: 30px;border: thin solid #009999;  -webkit-transition: 0.5s;
+           transition: 0.5s;" path="publisherid">
+            <c:forEach var="publisher" items="${publisherlist}">
+            <option>${publisher.publisherid}</option>
+            </c:forEach>
+           </form:select> 
            <br/><br/>
            <label>Category</label>
            <label style="margin-left: 450px;">Image URL</label>
            <br/>
-           <input type="text" size="50%"/>
-           <input type="text" size="50%" style="margin-left: 75px;"/>
+           <form:input type="text" size="50%" path="category"/>
+           <form:input type="text" size="50%" style="margin-left: 75px;" path="imageurl"/>
            <br/><br/>
            <button class="addbooksbutton" style="vertical-align:middle" onclick="showAlert()"><span>Add Book</span></button>
         </form:form>

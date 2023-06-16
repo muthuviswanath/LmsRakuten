@@ -178,7 +178,7 @@ th{
     <div class="container">
         <div class="logo-container">
         <div class="LogoImg">
-            <a href="index.html"><img src="resources/images/others/books.png"/> </a>
+            <a href="/LibraryManagement/"><img src="resources/images/others/books.png"/> </a>
         </div>
         
     </div>
@@ -187,17 +187,17 @@ th{
             <li><a href="#">About</a></li>
             <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a></li>
             <li><i class="fa fa-user" aria-hidden="true"></i> Admin</li>
-            <li><a href="login.html">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+            <li><a href="/LibraryManagement/login">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
         </ul>
     </div>
     <div id="navbar">
-        <a class="active" href="booksinventory.html">Book Inventory</a>
-        <a href="authorrecords.html">Authors</a>
-        <a href="publisherrecords.html">Publishers</a>
-        <a href="userrecords.html">Users</a>
+        <a class="active" href="booksinventory">Book Inventory</a>
+        <a href="authorrecords">Authors</a>
+        <a href="publisherrecords">Publishers</a>
+        <a href="userrecords">Users</a>
         <a href="lendrequestlist">Request List</a>
-        <a href="lentlist.html">Lent Books</a>
-        <a href="lendhistory.html">Lend/Return History</a>
+        <a href="lentlist">Lent Books</a>
+        <a href="lendhistory">Lend/Return History</a>
       </div>
       <div class="content">
         <a href="addbooks">Add Books to Inventory</a>
@@ -225,7 +225,8 @@ th{
                         <td>${books.publisherid}</td>
                         <td>${books.category}</td>
                         <td>${books.imageurl}</td>
-                        <td><a href="#">Edit</a> <br/> <a href="#">Delete</a></td>
+                     <td><a href="editbooks/${books.bookid}">Edit</a>
+                        <a href="deletebooks/${books.bookid}" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
                     </tr>
                     </c:forEach>
                 </tbody>

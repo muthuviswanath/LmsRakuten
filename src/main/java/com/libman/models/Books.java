@@ -8,11 +8,10 @@ public class Books {
 	private String imageurl;
 	private int authorid;
 	private int publisherid;
-	
-	public int getBookId() {
+	public int getBookid() {
 		return bookid;
 	}
-	public void setBookId(int bookid) {
+	public void setBookid(int bookid) {
 		this.bookid = bookid;
 	}
 	public String getBooktitle() {
@@ -51,4 +50,6 @@ public class Books {
 	public void setPublisherid(int publisherid) {
 		this.publisherid = publisherid;
 	}
+	
+	
 }

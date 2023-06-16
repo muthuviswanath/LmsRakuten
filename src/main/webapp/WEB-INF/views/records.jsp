@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/svg-with-js.min.css" integrity="sha512-iyaXtrpKz7FIRsICgrvVtq1vkSJT/cfLeXA0sHSQaAs0y3LdqXWlQCXTxM246mTQ/M2qpyVX3A0aRfmTt0LOCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/v4-font-face.min.css" integrity="sha512-ueEJBIkl0DBM2fA8eS/o12U3l+ZUFn32IUY4jIaTZnNtKR4ktQw3cE/tx/tFIYJuBm4EVT7WUMqIXP1TUN0boA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/v4-shims.min.css" integrity="sha512-SkKgNHAdwXn0lw1CzCwHFpNidxo0GTBZkWWuUHNahSjQZtmeoQYjMvmHe1WYuCT8HystwoBp8fYDfuWD6azryQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="icon" type="image/x-icon" href="images/others/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/LibraryManagement/resources/images/others/favicon.ico">
  <style>
 body {
   font-family: sans-serif;
@@ -252,7 +252,7 @@ th{
     <div class="container">
         <div class="logo-container">
         <div class="LogoImg">
-            <a href="index.html"><img src="images/others/books.png"/> </a>
+            <a href="/LibraryManagement/"><img src="/LibraryManagement/resources/images/others/books.png"/> </a>
         </div>
         
     </div>
@@ -261,13 +261,13 @@ th{
             <li><a href="#">About</a></li>
             <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a></li>
             <li><i class="fa fa-user" aria-hidden="true"></i> John</li>
-            <li><a href="login.html">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+            <li><a href="/LibraryManagement/login">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
         </ul>
     </div>
     <div id="navbar">
-      <a href="viewbooks.html">View Books</a>
-      <a href="issuedbooks.html">Issued Books</a>
-      <a class="active" href="records.html">Records</a>
+      <a href="viewbooks">View Books</a>
+      <a href="issuedbooks">Issued Books</a>
+      <a class="active" href="records">Records</a>
     </div>
       <div class="content">
         <div class="booklist-table">

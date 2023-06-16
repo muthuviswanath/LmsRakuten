@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/svg-with-js.min.css" integrity="sha512-iyaXtrpKz7FIRsICgrvVtq1vkSJT/cfLeXA0sHSQaAs0y3LdqXWlQCXTxM246mTQ/M2qpyVX3A0aRfmTt0LOCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/v4-font-face.min.css" integrity="sha512-ueEJBIkl0DBM2fA8eS/o12U3l+ZUFn32IUY4jIaTZnNtKR4ktQw3cE/tx/tFIYJuBm4EVT7WUMqIXP1TUN0boA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/v4-shims.min.css" integrity="sha512-SkKgNHAdwXn0lw1CzCwHFpNidxo0GTBZkWWuUHNahSjQZtmeoQYjMvmHe1WYuCT8HystwoBp8fYDfuWD6azryQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="icon" type="image/x-icon" href="images/others/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="resources/images/others/favicon.ico">
  <style>
 body {
   font-family: sans-serif;
@@ -252,7 +255,7 @@ th{
     <div class="container">
         <div class="logo-container">
         <div class="LogoImg">
-            <a href="index.html"><img src="images/others/books.png"/> </a>
+            <a href="/LibraryManagement/"><img src="resources/images/others/books.png"/> </a>
         </div>
         
     </div>
@@ -261,17 +264,17 @@ th{
             <li><a href="#">About</a></li>
             <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a></li>
             <li><i class="fa fa-user" aria-hidden="true"></i> Admin</li>
-            <li><a href="login.html">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+            <li><a href="/LibraryManagement/login">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
         </ul>
     </div>
     <div id="navbar">
-        <a href="booksinventory.html">Book Inventory</a>
-        <a href="authorrecords.html">Authors</a>
-        <a href="publisherrecords.html">Publishers</a>
-        <a href="userrecords.html">Users</a>
-        <a href="lendrequestlist.html">Request List</a>
-        <a class="active" href="lentlist.html">Lent Books</a>
-        <a href="lendhistory.html">Lend/Return History</a>
+        <a href="booksinventory">Book Inventory</a>
+        <a href="authorrecords">Authors</a>
+        <a href="publisherrecords">Publishers</a>
+        <a href="userrecords">Users</a>
+        <a href="lendrequestlist">Request List</a>
+        <a class="active" href="lentlist">Lent Books</a>
+        <a href="lendhistory">Lend/Return History</a>
       </div>
       <div class="content">
         <div class="booklist-table">
@@ -287,32 +290,16 @@ th{
                     </tr>
                 </thead>
                 <tbody>
+                <c:forEach var="lends" items="${approvedlist}">
                     <tr>
-                        <td>1001</td>
-                        <td>John</td>
-                        <td>Harry Potter and the Philosopher's Stone</td>
-                        <td>17-Dec-2022</td>
-                        <td>31-Dec-2022</td>
-                        <td>Approved</td>
+                        <td>${lends.lendid}</td>
+                        <td>${lends.userid}</td>
+                        <td>${lends.bookid}</td>
+                        <td>${lends.requestdate}</td>
+                        <td>${lends.defaultreturndate}</td>
+                        <td>${lends.requeststatus}</td>
                     </tr>
-                    <tr>
-                        <td>1002</td>
-                        <td>John</td>
-                        <td>Harry Potter and the Chamber of Secrets</td>
-                        <td>17-Dec-2022</td>
-                        <td>31-Dec-2022</td>
-                        <td>Approved</td>
-                    </tr>
-                    <tr>
-                        <td>1003</td>
-                        <td>John</td>
-                        <td>Harry Potter and the Order of Phoenix</td>
-                        <td>17-Dec-2022</td>
-                        <td>31-Dec-2022</td>
-                        <td>Approved</td>
-                    </tr>
-                  
-                    <!-- and so on... -->
+                    </c:forEach>                    <!-- and so on... -->
                 </tbody>
             </table>
         </div>

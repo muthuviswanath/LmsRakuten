@@ -210,7 +210,7 @@ padding: 20px;
     <div class="container">
         <div class="logo-container">
         <div class="LogoImg">
-        <a href="index.html"><img src="resources/images/others/books.png"/> </a>
+        <a href="/LibraryManagement/"><img src="resources/images/others/books.png"/> </a>
         </div>
         
     </div>

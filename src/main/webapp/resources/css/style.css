@@ -1,0 +1,196 @@
+body {
+    font-family: sans-serif;
+  }
+  .homepagemenuitems{
+      display: flex;
+      list-style-type:none;
+  }
+  .homepagemenuitems li{
+      margin-left: 20px;
+  }
+  
+  .homepagemenuitems li a{
+      color: white;
+      text-decoration: none;
+  }
+  .homepagemenuitems li a:active{
+      color: white;
+      text-decoration: none;
+  }
+  .homepagemenuitems li a:hover{
+      color: white;
+      font-size: 17px;
+  }
+  .container{
+      margin-top: 20px;
+      background-color: #009999;
+      height: 70px;
+      position: fixed;
+      left:108px;
+  }
+  .LogoImg{
+      max-height: 70px;
+      max-width: 70px;
+      padding: 10px;
+      float:left;
+  }
+  .homepagemenu{
+      float: right;
+      color: white;
+      padding: 20px;
+      font-size: 16px;
+  }
+  .logo-container{
+      float:left;
+  }
+  
+  #navbar {
+  overflow: hidden;
+  position: fixed;
+  top:90px;
+  left:108px;
+    overflow: hidden;
+    background-color: #f8f8f8;
+    width:85.96%;
+  }
+  
+  #navbar a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  #navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  #navbar a.active {
+    background-color: #00d9d9;
+    color: #001313;
+  
+    
+  }
+  .content{
+      position: fixed;
+      margin-top: 130px;
+      height: 530px;
+      overflow: auto;
+      width: 85.10%;
+      
+  }
+  .footer{
+      position: fixed;
+      background-color: #60d7d7;
+      top: 690px;
+      left: 108px;
+      height: 40px;
+      width: 85.95%;
+      font-size: 13px;
+      font-style: oblique;
+      font-weight: bold;
+      text-align: center;
+      padding-top: 12px;
+  }
+  .userfriendly{
+  position: absolute;
+  top: 80px;
+  margin-left: 10px;
+  width: 98%;
+  height: 430px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 2px 4px 6px #00000029;
+  color: #009999;
+  border-radius: 27px;
+  opacity: 1;
+  padding-top: 55px;
+  padding-left: 65px;
+  padding-right: 65px;
+  padding-bottom: 20px;
+  text-align: justify;
+  
+  }
+  
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #009999; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #009999; 
+  }
+  .addauthorbutton {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #009999;
+    border: none;
+    color: #FFF;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px;
+    width: 120px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .addauthorbutton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .addauthorbutton span:after {
+    content: '\002B';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .addauthorbutton:hover span {
+    padding-right: 15px;
+  }
+  
+  .addauthorbutton:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  input[type=text] {
+      border: 2px solid #009999;  
+      border-radius: 5px;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+      box-sizing: border-box;
+  }
+  input[type=text]:focus {
+      border: 3px solid #009999;  
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+      box-sizing: border-box;
+  }
+  input[type=text]:focus-visible {
+      border: 3px solid #009999;  
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+      box-sizing: border-box;
+  }

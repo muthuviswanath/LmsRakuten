@@ -252,7 +252,7 @@ th{
     <div class="container">
         <div class="logo-container">
         <div class="LogoImg">
-            <a href="index.html"><img src="images/others/books.png"/> </a>
+            <a href="/LibraryManagement/"><img src="images/others/books.png"/> </a>
         </div>
         
     </div>
@@ -261,13 +261,13 @@ th{
             <li><a href="#">About</a></li>
             <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a></li>
             <li><i class="fa fa-user" aria-hidden="true"></i> John</li>
-            <li><a href="login.html">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+            <li><a href="/LibraryManagement/login">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
         </ul>
     </div>
     <div id="navbar">
-      <a href="viewbooks.html">View Books</a>
-      <a class="active" href="issuedbooks.html">Issued Books</a>
-      <a href="records.html">Records</a>
+      <a href="viewbooks">View Books</a>
+      <a class="active" href="issuedbooks">Issued Books</a>
+      <a href="records">Records</a>
     </div>
       <div class="content">
         <div class="booklist-table">

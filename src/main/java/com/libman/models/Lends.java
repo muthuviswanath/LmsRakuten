@@ -1,14 +1,12 @@
 package com.libman.models;
 
-
-import java.time.LocalDate;
-
+import java.util.Date;
 
 public class Lends {
 	private int lendid;
-	private LocalDate requestdate;
-	private LocalDate defaultreturndate;
-	private LocalDate actualreturndate;
+	private Date requestdate;
+	private Date defaultreturndate;
+	private Date actualreturndate;
 	private int userid;
 	private int bookid;
 	private String requeststatus;
@@ -20,22 +18,22 @@ public class Lends {
 	public void setLendid(int lendid) {
 		this.lendid = lendid;
 	}
-	public LocalDate getRequestdate() {
+	public Date getRequestdate() {
 		return requestdate;
 	}
-	public void setRequestdate(LocalDate requestdate) {
+	public void setRequestdate(Date requestdate) {
 		this.requestdate = requestdate;
 	}
-	public LocalDate getDefaultreturndate() {
+	public Date getDefaultreturndate() {
 		return defaultreturndate;
 	}
-	public void setDefaultreturndate(LocalDate defaultreturndate) {
+	public void setDefaultreturndate(Date defaultreturndate) {
 		this.defaultreturndate = defaultreturndate;
 	}
-	public LocalDate getActualreturndate() {
+	public Date getActualreturndate() {
 		return actualreturndate;
 	}
-	public void setActualreturndate(LocalDate actualreturndate) {
+	public void setActualreturndate(Date actualreturndate) {
 		this.actualreturndate = actualreturndate;
 	}
 	public int getUserid() {

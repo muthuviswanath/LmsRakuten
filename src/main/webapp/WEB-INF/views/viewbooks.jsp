@@ -187,7 +187,7 @@ overflow-wrap: normal;
     <div class="container">
         <div class="logo-container">
         <div class="LogoImg">
-            <a href="index.html"><img src="resources/images/others/books.png"/> </a>
+            <a href="/LibraryManagement/"><img src="resources/images/others/books.png"/> </a>
         </div>
         
     </div>
@@ -195,17 +195,16 @@ overflow-wrap: normal;
         <ul class="homepagemenuitems">
             <li><a href="#">About</a></li>
             <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a></li>
-            <li><i class="fa fa-user" aria-hidden="true"></i> John</li>
-            <li><a href="login.html">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+            <li><i class="fa fa-user" aria-hidden="true"></i> ${username}</li>
+            <li><a href="/LibraryManagement/login">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
         </ul>
     </div>
     <div id="navbar">
-        <a class="active" href="viewbooks.html">View Books</a>
-        <a href="issuedbooks.html">Issued Books</a>
-        <a href="records.html">Records</a>
+        <a class="active" href="viewbooks">View Books</a>
+        <a href="issuedbooks">Issued Books</a>
+        <a href="records">Records</a>
       </div>
       <div class="content">
-        <input type="text" name="search" placeholder="Search.." class="searchbar">
         <c:forEach var="books" items="${bookslist}">
         <div class="card">
             <img src= "${books.imageurl}" width="100%"><br/>
