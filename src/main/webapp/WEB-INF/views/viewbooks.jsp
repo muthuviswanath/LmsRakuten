@@ -201,9 +201,9 @@ overflow-wrap: normal;
         </ul>
     </div>
     <div id="navbar">
-        <a class="active" href="viewbooks">View Books</a>
-        <a href="issuedbooks/${loginuserid}">Issued Books</a>
-        <a href="records">Records</a>
+        <a class="active" href="/LibraryManagement/viewbooks">View Books</a>
+        <a href="/LibraryManagement/issuedbooks/${loginuserid}">Issued Books</a>
+        <a href="/LibraryManagement/userhistory/${loginuserid }">Records</a>
       </div>
       <div class="content">
         <c:forEach var="books" items="${bookslist}">

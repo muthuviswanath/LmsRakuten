@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+ <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -265,9 +269,9 @@ th{
         </ul>
     </div>
     <div id="navbar">
-      <a href="viewbooks">View Books</a>
-      <a href="issuedbooks">Issued Books</a>
-      <a class="active" href="records">Records</a>
+      <a href="/LibraryManagement/viewbooks">View Books</a>
+      <a href="/LibraryManagement/issuedbooks/${userid }">Issued Books</a>
+      <a class="active" href="/LibraryManagement/userhistory/${userid }">Records</a>
     </div>
       <div class="content">
         <div class="booklist-table">
@@ -282,27 +286,16 @@ th{
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1001</td>
-                        <td>John</td>
-                        <td>Harry Potter and the Philosopher's Stone</td>
-                        <td>0</td>
-                        <td>Approved</td>
-                    </tr>
-                    <tr>
-                      <td>1002</td>
-                      <td>John</td>
-                      <td>Harry Potter and the Chamber of Secrets</td>
-                      <td>0</td>
-                      <td>Rejected</td>
-                    </tr>
-                    <tr>
-                      <td>1003</td>
-                      <td>John</td>
-                      <td>Harry Potter and the Order of Phoenix</td>
-                      <td>0</td>
-                      <td>Approved</td>
-                    </tr>
+                     <c:forEach var="userhistory" items="${userhistorylist}">
+                     <tr>
+                     <td>${userhistory.lendid}</td>
+                     <td>${userhistory.userid}</td>
+                     <td>${userhistory.bookid}</td>
+                     <td>${userhistory.fineamount}</td>
+                     <td>${userhistory.requeststatus}</td>
+                     </tr>
+                     
+                     </c:forEach>
                   
                     <!-- and so on... -->
                 </tbody>

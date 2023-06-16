@@ -270,8 +270,8 @@ th{
     </div>
     <div id="navbar">
       <a href="/LibraryManagement/viewbooks">View Books</a>
-      <a class="active" href="issuedbooks">Issued Books</a>
-      <a href="records">Records</a>
+      <a class="active" href="/LibraryManagement/issuedbooks/${userid}">Issued Books</a>
+      <a href="/LibraryManagement/userhistory/${userid }">Records</a>
     </div>
       <div class="content">
         <div class="booklist-table">

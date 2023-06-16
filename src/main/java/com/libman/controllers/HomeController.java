@@ -276,10 +276,18 @@ public class HomeController {
 	
 	@RequestMapping(value="/issuedbooks/{id}", method=RequestMethod.GET)
 	public String IssuedBooks(@PathVariable int id, Model model) {
-		System.out.println(id);
 		List<Lends> issuedbooklist = lendRequestDao.getLentRecords(id);
 		model.addAttribute("issuedbook",issuedbooklist);
+		model.addAttribute("userid",id);
 		return "issuedbooks";
+	}
+	
+	@RequestMapping(value="/userhistory/{id}", method=RequestMethod.GET)
+	public String userHistory(@PathVariable int id, Model model) {
+		List<Lends> issuedbooklist = lendRequestDao.getUserRecords(id);
+		model.addAttribute("userhistorylist",issuedbooklist);
+		model.addAttribute("userid",id);
+		return "userhistory";
 	}
 	
 }

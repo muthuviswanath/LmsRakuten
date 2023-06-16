@@ -12,5 +12,6 @@ public interface LendRequestDao {
 	 int lendRequestRejectAction(Lends lend);
 	 Lends getLendRequestById(int id);
 	 List<Lends>getLentRecords(int userid);
+	 List<Lends>getUserRecords(int userid);
 		
 }

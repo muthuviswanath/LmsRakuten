@@ -133,4 +133,23 @@ public class LendRequestDaoImpl implements LendRequestDao{
 			}
 		});
 	}
+	@Override
+	public	List<Lends>getUserRecords(int userid){
+		return jdbcTemplate.query("SELECT * FROM lendrequest where userid = "+userid+"", new RowMapper<Lends>() {
+
+			@Override
+			public Lends mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Lends lend = new Lends();
+				lend.setLendid(rs.getInt("lendid"));
+				lend.setUserid(rs.getInt("userid"));
+				lend.setBookid(rs.getInt("bookid"));
+				lend.setRequestdate(rs.getDate("requestdate"));
+				lend.setDefaultreturndate(rs.getDate("defaultreturndate"));
+				lend.setActualreturndate(rs.getDate("actualreturndate"));
+				lend.setFineamount(rs.getInt("fineamount"));
+				lend.setRequeststatus(rs.getString("requeststatus"));
+				return lend;
+			}
+		});
+	}
 }
