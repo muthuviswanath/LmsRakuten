@@ -46,6 +46,8 @@ public class HomeController {
 	
 	@Autowired
 	UsersDao usersDao;
+	
+	Users user;
 
 	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public ModelAndView showLogin(HttpServletRequest request, HttpServletResponse response) {
@@ -57,7 +59,7 @@ public class HomeController {
 	@RequestMapping(value="/loginProcess", method=RequestMethod.POST)
 	public ModelAndView loginProcess(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("login") Login login ) {
 		ModelAndView mav = null;
-		Users user = userService.validateUser(login);
+		user = userService.validateUser(login);
 		if (null != user && user.getUsername().equals("admin")) {
 			mav = new ModelAndView("lendrequestlist");
 			List<Lends> list = lendRequestDao.getLentRecords();
@@ -65,9 +67,12 @@ public class HomeController {
 		} 
 		else if (null != user) {
 			mav = new ModelAndView("viewbooks");
+			login.setUsername(user.getUsername());
+			login.setLoginid(user.getUserid());
 			List<Books> list = booksDao.getAllBooks();
-			mav.addObject("username",login.getUsername());
-			mav.addObject("userid",user.getUserid());
+			
+			mav.addObject("username",user.getUsername());
+			mav.addObject("loginuserid", user.getUserid());
 			mav.addObject("bookslist", list);
 		}
 		else {
@@ -104,6 +109,8 @@ public class HomeController {
 	@RequestMapping(value="/viewbooks")
 	public String viewBooks(Model model) {
 		List<Books> list = booksDao.getAllBooks();
+		model.addAttribute("username",user.getUsername());
+		model.addAttribute("loginuserid", user.getUserid());
 		model.addAttribute("bookslist",list);
 		return "viewbooks";
 	}
@@ -267,17 +274,12 @@ public class HomeController {
 	}
 	
 	
-	@RequestMapping(value="/issuedbooks", method=RequestMethod.POST)
-	public ModelAndView IssuedBooks(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("login") Login login ) {
-		ModelAndView mav = null;
-		Users user = userService.validateUser(login);
-		if (null != user) {
-			mav = new ModelAndView("issuedbooks");
-			List<Lends> list = lendRequestDao.getLentRecords(user.getUserid());
-			mav.addObject("username",login.getUsername());
-			mav.addObject("userid",user.getUserid());
-			mav.addObject("issuedbook", list);
-		}
-		return mav;
+	@RequestMapping(value="/issuedbooks/{id}", method=RequestMethod.GET)
+	public String IssuedBooks(@PathVariable int id, Model model) {
+		System.out.println(id);
+		List<Lends> issuedbooklist = lendRequestDao.getLentRecords(id);
+		model.addAttribute("issuedbook",issuedbooklist);
+		return "issuedbooks";
 	}
+	
 }

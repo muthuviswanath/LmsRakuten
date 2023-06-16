@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+ <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +16,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/svg-with-js.min.css" integrity="sha512-iyaXtrpKz7FIRsICgrvVtq1vkSJT/cfLeXA0sHSQaAs0y3LdqXWlQCXTxM246mTQ/M2qpyVX3A0aRfmTt0LOCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/v4-font-face.min.css" integrity="sha512-ueEJBIkl0DBM2fA8eS/o12U3l+ZUFn32IUY4jIaTZnNtKR4ktQw3cE/tx/tFIYJuBm4EVT7WUMqIXP1TUN0boA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/v4-shims.min.css" integrity="sha512-SkKgNHAdwXn0lw1CzCwHFpNidxo0GTBZkWWuUHNahSjQZtmeoQYjMvmHe1WYuCT8HystwoBp8fYDfuWD6azryQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="icon" type="image/x-icon" href="images/others/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/LibraryManagement/resources/images/others/favicon.ico">
  <style>
 body {
   font-family: sans-serif;
@@ -252,7 +256,7 @@ th{
     <div class="container">
         <div class="logo-container">
         <div class="LogoImg">
-            <a href="/LibraryManagement/"><img src="images/others/books.png"/> </a>
+            <a href="/LibraryManagement/"><img src="/LibraryManagement/resources/images/others/books.png"/> </a>
         </div>
         
     </div>
@@ -265,7 +269,7 @@ th{
         </ul>
     </div>
     <div id="navbar">
-      <a href="viewbooks">View Books</a>
+      <a href="/LibraryManagement/viewbooks">View Books</a>
       <a class="active" href="issuedbooks">Issued Books</a>
       <a href="records">Records</a>
     </div>
@@ -282,27 +286,15 @@ th{
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1001</td>
-                        <td>Harry Potter and the Philosopher's Stone</td>
-                        <td>17-Dec-2022</td>
-                        <td>31-Dec-2022</td>
-                        <td><button class="approvebutton" style="vertical-align:middle"><span>Return</span></button></td>
+                <c:forEach var="issbook" items="${issuedbook}">
+                  <tr>
+                  <td>${issbook.lendid}</td>
+           				<td>${issbook.bookid}</td>
+           				<td>${issbook.requestdate}</td>
+           				<td>${issbook.defaultreturndate}</td>
+           				<td><button class="approvebutton" style="vertical-align:middle"><span>Return</span></button></td>
                     </tr>
-                    <tr>
-                        <td>1002</td>
-                        <td>Harry Potter and the Chamber of Secrets</td>
-                        <td>17-Dec-2022</td>
-                        <td>31-Dec-2022</td>
-                        <td><button class="approvebutton" style="vertical-align:middle"><span>Return</span></button></td>
-                    </tr>
-                    <tr>
-                        <td>1003</td>
-                        <td>Harry Potter and the Order of Phoenix</td>
-                        <td>17-Dec-2022</td>
-                        <td>31-Dec-2022</td>
-                        <td><button class="approvebutton" style="vertical-align:middle"><span>Return</span></button></td>
-                    </tr>
+                  </c:forEach>
                   
                     <!-- and so on... -->
                 </tbody>

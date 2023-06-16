@@ -116,7 +116,7 @@ public class LendRequestDaoImpl implements LendRequestDao{
 	@Override
 	public List<Lends> getLentRecords(int userid) {
 		
-		return jdbcTemplate.query("SELECT * FROM lendrequest where userid = ? ", new RowMapper<Lends>() {
+		return jdbcTemplate.query("SELECT * FROM lendrequest where userid = "+userid+" and requeststatus= 'Approved' ", new RowMapper<Lends>() {
 
 			@Override
 			public Lends mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -131,7 +131,6 @@ public class LendRequestDaoImpl implements LendRequestDao{
 				lend.setRequeststatus(rs.getString("requeststatus"));
 				return lend;
 			}
-		}, userid);
+		});
 	}
-
-	}
+}

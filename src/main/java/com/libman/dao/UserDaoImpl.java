@@ -93,6 +93,7 @@ class UserMapper implements RowMapper<Users> {
 	@Override
 	public Users mapRow(ResultSet rs, int arg1) throws SQLException {
 		Users user = new Users();
+		user.setUserid(rs.getInt("userid"));
 		user.setUsername(rs.getString("username"));
 		user.setPassword(rs.getString("password"));
 		user.setRole(rs.getString("role"));

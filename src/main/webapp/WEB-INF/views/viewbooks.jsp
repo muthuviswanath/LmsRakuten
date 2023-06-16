@@ -196,12 +196,13 @@ overflow-wrap: normal;
             <li><a href="#">About</a></li>
             <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a></li>
             <li><i class="fa fa-user" aria-hidden="true"></i> ${username}</li>
+            <li><i class="fa fa-user" aria-hidden="true"></i> ${loginuserid}</li>
             <li><a href="/LibraryManagement/login">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
         </ul>
     </div>
     <div id="navbar">
         <a class="active" href="viewbooks">View Books</a>
-        <a href="issuedbooks">Issued Books</a>
+        <a href="issuedbooks/${loginuserid}">Issued Books</a>
         <a href="records">Records</a>
       </div>
       <div class="content">
